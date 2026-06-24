@@ -1,15 +1,15 @@
 # cronbuilder
 
 <!-- ALL-CONTRIBUTORS-BADGE:START --><!-- ALL-CONTRIBUTORS-BADGE:END -->
-[![npm version](https://img.shields.io/npm/v/cronbuilder.svg)](https://www.npmjs.com/package/cronbuilder)
-[![npm downloads](https://img.shields.io/npm/dm/cronbuilder.svg)](https://www.npmjs.com/package/cronbuilder)
+[![npm version](https://img.shields.io/npm/v/@billdaddy/cronbuilder.svg)](https://www.npmjs.com/package/@billdaddy/cronbuilder)
+[![npm downloads](https://img.shields.io/npm/dm/@billdaddy/cronbuilder.svg)](https://www.npmjs.com/package/@billdaddy/cronbuilder)
 [![CI](https://img.shields.io/github/actions/workflow/status/trananhtung/cronbuilder/ci.yml?branch=main)](https://github.com/trananhtung/cronbuilder/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 **Fluent cron expression builder, parser, validator, human-readable descriptions, and next-fire-date calculator — zero dependencies, TypeScript-first.**
 
 ```ts
-import { CronExpression, describeCron, nextDates } from "cronbuilder";
+import { CronExpression, describeCron, nextDates } from "@billdaddy/cronbuilder";
 
 // Fluent builder
 const expr = new CronExpression()
@@ -40,7 +40,7 @@ The last npm package attempting this space — `cron-builder` (version 0.3.0) �
 ## Install
 
 ```bash
-npm install cronbuilder
+npm install @billdaddy/cronbuilder
 ```
 
 ## Usage
@@ -48,7 +48,7 @@ npm install cronbuilder
 ### CronExpression — fluent builder
 
 ```ts
-import { CronExpression, Cron } from "cronbuilder";
+import { CronExpression, Cron } from "@billdaddy/cronbuilder";
 
 // Every 5 minutes
 new CronExpression().every(5).minutes().toString(); // "*/5 * * * *"
@@ -92,7 +92,7 @@ c.matches(new Date()); // true/false
 ### parseCron / validateCron
 
 ```ts
-import { parseCron, validateCron } from "cronbuilder";
+import { parseCron, validateCron } from "@billdaddy/cronbuilder";
 
 const p = parseCron("0 9 * * 1-5");
 p.minute;    // [0]
@@ -123,7 +123,7 @@ Produces human-readable descriptions in English:
 | `0 0 1 1 *` | At 00:00, on the 1st of each month, in January |
 
 ```ts
-import { describeCron } from "cronbuilder";
+import { describeCron } from "@billdaddy/cronbuilder";
 
 describeCron("*/15 * * * *");   // "Every 15 minutes"
 describeCron("0 9 * * MON-FRI"); // "At 09:00, Monday through Friday"
@@ -135,7 +135,7 @@ describeCron("0 0 1 JAN *");    // "At 00:00, on the 1st of each month, in Janua
 All dates are in UTC. Pass `from` to control the starting point.
 
 ```ts
-import { nextDates, nextDate } from "cronbuilder";
+import { nextDates, nextDate } from "@billdaddy/cronbuilder";
 
 // Next 3 fires of "every 5 minutes" after 10:00 UTC
 const dates = nextDates("*/5 * * * *", 3, new Date("2026-06-24T10:00:00Z"));
@@ -150,7 +150,7 @@ const d = nextDate("0 9 * * 1-5");
 Checks whether a given Date (in UTC) matches a cron expression.
 
 ```ts
-import { matchesCron } from "cronbuilder";
+import { matchesCron } from "@billdaddy/cronbuilder";
 
 matchesCron("*/5 * * * *", new Date("2026-06-24T10:15:00Z")); // true
 matchesCron("0 9 * * 1-5", new Date("2026-06-27T09:00:00Z")); // false (Saturday)
@@ -159,7 +159,7 @@ matchesCron("0 9 * * 1-5", new Date("2026-06-27T09:00:00Z")); // false (Saturday
 ### CronPresets
 
 ```ts
-import { CronPresets } from "cronbuilder";
+import { CronPresets } from "@billdaddy/cronbuilder";
 
 CronPresets.EVERY_MINUTE;   // "* * * * *"
 CronPresets.EVERY_HOUR;     // "0 * * * *"

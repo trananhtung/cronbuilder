@@ -1,5 +1,5 @@
 {
-  "name": "cronbuilder",
+  "name": "@billdaddy/cronbuilder",
   "version": "0.1.0",
   "description": "Fluent cron expression builder, parser, validator, human-readable descriptions, and next-fire calculator. Zero dependencies.",
   "type": "module",
@@ -13,7 +13,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc --noEmit",
@@ -21,9 +23,20 @@
     "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "keywords": [
-    "cron", "cron-expression", "cron-builder", "cron-parser", "cron-validator",
-    "schedule", "scheduler", "next-cron", "cron-description", "crontab",
-    "fluent", "builder", "typescript", "zero-dependency"
+    "cron",
+    "cron-expression",
+    "cron-builder",
+    "cron-parser",
+    "cron-validator",
+    "schedule",
+    "scheduler",
+    "next-cron",
+    "cron-description",
+    "crontab",
+    "fluent",
+    "builder",
+    "typescript",
+    "zero-dependency"
   ],
   "author": "trananhtung",
   "license": "MIT",
